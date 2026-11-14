@@ -1,0 +1,37 @@
+steps:
+  # 0. Run automated unit & integration tests across all 5 evaluation pillars
+  - name: 'python:3.11-slim'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        pip install --no-cache-dir -r requirements.txt
+        ADK_OFFLINE_MODE=1 python3 -m unittest discover -s tests -v
+
+  # 1. Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/insurance-fleet/app', '.']
+
+  # 2. Push the container image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/insurance-fleet/app']
+
+  # 3. Deploy container to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'insurance-fleet-demo'
+      - '--image'
+      - 'us-central1-docker.pkg.dev/$PROJECT_ID/insurance-fleet/app'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'ENV=CLOUD,PROJECT_ID=$PROJECT_ID'
+
+images:
+  - 'us-central1-docker.pkg.dev/$PROJECT_ID/insurance-fleet/app'
+

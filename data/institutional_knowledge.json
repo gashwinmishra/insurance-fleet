@@ -1,0 +1,101 @@
+[
+  {
+    "id": "MSG-8921",
+    "source": "internal chat room #senior-adjudicators",
+    "author": "Sarah Chen (VP Claims)",
+    "timestamp": "2023-10-27T14:32:00Z",
+    "context": "Post-incident review of Claim #99-AX-22",
+    "content": "ALERT: Disregard the 2mm rule for EV battery plates. We had a fire last week. ANY visual scratch on the battery casing is now a MANDATORY TOTAL LOSS.",
+    "weight": 0.95
+  },
+  {
+    "id": "MSG-4421",
+    "source": "internal chat room #home-risk",
+    "author": "Mike Ross (Lead Inspector)",
+    "timestamp": "2023-11-15T09:15:00Z",
+    "context": "Updates to Q4 Inspection Guidelines",
+    "content": "For Asphalt Shingles: If granule loss is visible in >20% of the image, do not approve patch repair. It requires full roof replacement.",
+    "weight": 0.90
+  },
+  {
+    "id": "MSG-7782",
+    "source": "internal chat room #auto-repair-ops",
+    "author": "Dave Miller (Regional Ops)",
+    "timestamp": "2024-01-10T11:00:00Z",
+    "context": "Cost Saving Initiative: Plastic Welding",
+    "content": "Bumper Cracks: Stop approving full replacements for single stress cracks < 3 inches! We have a new plastic welding vendor. APPROVE REPAIR only.",
+    "weight": 0.85
+  },
+  {
+    "id": "MSG-3391",
+    "source": "Email: Vendor Management",
+    "author": "Procurement Dept",
+    "timestamp": "2024-02-01T08:30:00Z",
+    "context": "New Mobile PDR Partnership",
+    "content": "Door Dings/Hail: All dent-only claims under 50mm MUST be routed to 'Mobile PDR' (Paintless Dent Repair). Do not send to Body Shop.",
+    "weight": 0.92
+  },
+  {
+    "id": "MSG-9912",
+    "source": "Safety Alert #ev-hazards",
+    "author": "Legal & Safety",
+    "timestamp": "2023-12-05T16:20:00Z",
+    "context": "Battery Leak Protocols",
+    "content": "CRITICAL: Any puncturing of the high-voltage battery casing requires immediate HAZMAT containment. Total Loss + Environmental Cleanup Fee.",
+    "weight": 0.99
+  },
+  {
+    "id": "MSG-5511",
+    "source": "internal chat room #catastrophe-response",
+    "author": "Claims Director",
+    "timestamp": "2024-03-12T10:00:00Z",
+    "context": "Windstorm 'Liam' Guidance",
+    "content": "Missing Shingles: If wind damage is < 5% of surface, approve 'Tab Sealing & Replace' only. Do not buy the whole slope.",
+    "weight": 0.88
+  },
+  {
+    "id": "MSG-1023",
+    "source": "internal chat room #cx-initiatives",
+    "author": "Sarah Jones (CX VP)",
+    "timestamp": "2024-04-10T09:00:00Z",
+    "context": "NPS Improvement Plan",
+    "content": "Customer Satisfaction Override: Approve 'Buff & Polish' for paint transfer claims < $200 even if policy excludes cosmetic. We need to boost NPS.",
+    "weight": 0.80
+  },
+  {
+    "id": "MSG-9988",
+    "source": "Safety Bulletin #HV-004",
+    "author": "Engineering Safety",
+    "timestamp": "2024-01-20T14:15:00Z",
+    "context": "High Voltage Logic Update",
+    "content": "HV Safety: Visible corrosion on orange HV connectors = MANDATORY HARNESS REPLACEMENT. Do not attempt to clean. Fire risk.",
+    "weight": 0.98
+  },
+  {
+    "id": "MSG-4455",
+    "source": "Email: Tech Ops",
+    "author": "Lead Technician",
+    "timestamp": "2024-02-28T11:45:00Z",
+    "context": "ADAS Guidelines",
+    "content": "ADAS Calibration: Any chip in camera 'sensor zone' (top center) requires OEM Glass Replacement + Calibration. No resin repairs allowed.",
+    "weight": 0.95
+  },
+  {
+    "id": "MSG-6672",
+    "source": "internal chat room #finance-control",
+    "author": "CFO Office",
+    "timestamp": "2024-03-01T10:00:00Z",
+    "context": "Wheel Refurbishment Policy",
+    "content": "Lease Return Standard: Curb rash > 3 inches on Turbine wheels must be refinished ($150), not replaced ($800).",
+    "weight": 0.85
+  },
+  {
+    "id": "MSG-2231",
+    "source": "internal chat room #home-prevention",
+    "author": "Loss Control",
+    "timestamp": "2023-11-05T13:20:00Z",
+    "context": "Leak Prevention",
+    "content": "Water Prevention: If rust is on step-flashing, approve 'Reseal & Paint' to prevent future leaks, even if technically wear & tear.",
+    "weight": 0.75
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "claims": [
+    {
+      "claim_id": "de377cec-bfce-4b74-95a2-e6e438648783",
+      "trace_id": "trace_b893e3dab7be43c2",
+      "timestamp": "2026-11-14T16:11:43.919204+00:00",
+      "claim_type": "auto",
+      "damage_type": "scratch",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS",
+      "pattern_key": "auto:scratch:battery_casing"
+    },
+    {
+      "claim_id": "35dcfd38-a5d7-490e-970c-0e8cc671436c",
+      "trace_id": "trace_0add17d73acb42a8",
+      "timestamp": "2026-11-14T16:11:44.289754+00:00",
+      "claim_type": "home",
+      "damage_type": "granule_loss",
+      "location": "roof_surface",
+      "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+      "pattern_key": "home:granule_loss:roof_surface"
+    },
+    {
+      "claim_id": "001c46a9-d220-4bc2-9ff4-ee77f0ec2836",
+      "trace_id": "trace_343e8dce7e974fd9",
+      "timestamp": "2026-11-14T16:11:44.606151+00:00",
+      "claim_type": "auto",
+      "damage_type": "crack",
+      "location": "rear_bumper_plastic",
+      "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+      "pattern_key": "auto:crack:rear_bumper_plastic"
+    }
+  ],
+  "human_overrides": [],
+  "pattern_counts": {
+    "auto:scratch:battery_casing": 16,
+    "auto:crack:rear_bumper_plastic": 25,
+    "auto:dent:side_door_panel": 42,
+    "home:granule_loss:roof": 19,
+    "home:missing_material:roof": 31,
+    "home:granule_loss:roof_surface": 1
+  }
+}

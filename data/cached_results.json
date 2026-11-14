@@ -1,0 +1,457 @@
+{
+  "case_001": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Scratch depth 0.5mm < 2.0mm threshold (Standard Policy)",
+      "source": "Official Policy v2.0",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "TOTAL_LOSS",
+        "reason": "OVERRIDE: Safety Risk (Fire Hazard) - Battery scratch detected."
+      },
+      "context_metadata": {
+        "rag_override_reason": "Critical Safety Protocol",
+        "retrieved_rules": [
+          {
+            "author": "QA",
+            "content": "ZERO TOLERANCE for battery scratches",
+            "source": "Safety Memo"
+          }
+        ]
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "TOTAL_LOSS",
+        "confidence": 0.99,
+        "source": "Evolved Policy (v2.1)"
+      },
+      "signals": {
+        "draft_policy_diff": "- \"battery_scratch\": \"< 2mm\"\n+ \"battery_scratch\": \"ZERO TOLERANCE\"",
+        "frequency_stats": {
+          "metric": "Manual Overrides",
+          "value": "16",
+          "trend": "UP (+45%)"
+        }
+      }
+    }
+  },
+  "case_002": {
+    "layer_1_base": {
+      "outcome": "TOTAL_LOSS",
+      "reason": "Puncture depth 25.0mm exceeds the maximum allowable threshold for battery casing repair. Any puncture defaults to TOTAL_LOSS.",
+      "source": "Official Policy v3.5",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "TOTAL_LOSS",
+        "reason": "Confirmed TOTAL_LOSS due to critical puncture. No overrides apply; aligns with safety regulations and material compromise."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No override necessary; base decision aligns with institutional knowledge.",
+        "retrieved_rules": [
+          {
+            "author": "Safety Department",
+            "content": "Any puncture to the EV battery casing constitutes a critical safety risk and mandates a TOTAL_LOSS assessment."
+          }
+        ]
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "TOTAL_LOSS",
+        "confidence": 1.0,
+        "source": "Official Policy v3.5 + Institutional Knowledge"
+      },
+      "signals": {
+        "draft_policy_diff": "No policy change required. Current policy and institutional knowledge adequately address battery punctures.",
+        "frequency_stats": {
+          "metric": "Puncture Claims on EV Batteries",
+          "value": "3",
+          "trend": "Stable"
+        }
+      }
+    }
+  },
+  "case_003": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Minor crack in rear bumper (plastic) is within acceptable repair parameters according to standard policy.",
+      "source": "Official Policy",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No overriding institutional knowledge found for minor bumper cracks."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No relevant rules found.",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 1.0,
+        "source": "Official Policy"
+      },
+      "signals": {
+        "draft_policy_diff": "No policy change suggested.",
+        "frequency_stats": {
+          "metric": "Manual Overrides for Bumper Cracks",
+          "value": "2",
+          "trend": "DOWN (-10%)"
+        }
+      }
+    }
+  },
+  "case_004": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Dent depth 3.0mm falls within the repairable range for side door panels (under 5mm).",
+      "source": "Official Policy",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No specific rules found to override the base decision for minor dents on side door panels."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No overriding rules found.",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 1.0,
+        "source": "Current Policy"
+      },
+      "signals": {
+        "draft_policy_diff": "N/A",
+        "frequency_stats": {
+          "metric": "Dent Repair Approvals",
+          "value": "1200",
+          "trend": "STABLE"
+        }
+      }
+    }
+  },
+  "case_005": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Scrape depth 1.2mm is within acceptable limits for undercarriage shield repair (Standard Policy).",
+      "source": "Official Policy v2.0",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No override rules found. Proceeding with base decision."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No specific rules found to override the base decision.",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 0.95,
+        "source": "Current Policy (v2.0)"
+      },
+      "signals": {
+        "draft_policy_diff": "No policy change suggested.",
+        "frequency_stats": {
+          "metric": "Undercarriage Shield Scrape Claims",
+          "value": "250",
+          "trend": "STABLE"
+        }
+      }
+    }
+  },
+  "case_006": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Corrosion detected on HV connector, but severity is moderate and depth is 0.0mm, meeting standard repair criteria.",
+      "source": "Official Policy v3.5",
+      "confidence": 0.95
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "TOTAL_LOSS",
+        "reason": "OVERRIDE: High Voltage system compromise. Any corrosion on HV connectors necessitates complete replacement due to potential safety risks (electrical arcing, fire)."
+      },
+      "context_metadata": {
+        "rag_override_reason": "Critical Safety Protocol - High Voltage System",
+        "retrieved_rules": [
+          {
+            "author": "Safety Engineering",
+            "content": "Any corrosion on HV connectors mandates replacement of the entire HV cable assembly due to potential risk of arcing and fire."
+          }
+        ]
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "TOTAL_LOSS",
+        "confidence": 0.99,
+        "source": "Evolved Policy (v3.6)"
+      },
+      "signals": {
+        "draft_policy_diff": "-  \"hv_connector_corrosion\": \"Moderate corrosion, 0.0mm depth -> Repair\"\n+ \"hv_connector_corrosion\": \"ANY corrosion on HV connectors -> TOTAL_LOSS (High Voltage Safety Risk)\"",
+        "frequency_stats": {
+          "metric": "HV Connector Corrosion Overrides",
+          "value": "7",
+          "trend": "UP (+150%)"
+        }
+      }
+    }
+  },
+  "case_007": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Scuff depth 0.0mm < threshold for replacement (Standard Policy)",
+      "source": "Official Policy v2.0",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No override rules found. Standard repair applies."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No relevant rules found in Institutional Knowledge.",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 1.0,
+        "source": "Official Policy v2.0"
+      },
+      "signals": {
+        "draft_policy_diff": "No policy change suggested.",
+        "frequency_stats": {
+          "metric": "Manual Overrides",
+          "value": "2",
+          "trend": "DOWN (-5%)"
+        }
+      }
+    }
+  },
+  "case_008": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Abrasion depth 2.0mm falls within repairable range according to standard policy.",
+      "source": "Official Policy v2.0",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPLACE",
+        "reason": "OVERRIDE: Turbine wheel abrasion on rim can lead to imbalance and safety concerns, despite depth being within repair range. Rim integrity compromised."
+      },
+      "context_metadata": {
+        "rag_override_reason": "Safety and Performance Standard",
+        "retrieved_rules": [
+          {
+            "author": "Engineering",
+            "content": "Any abrasion to turbine wheel rim requires replacement due to potential imbalance issues."
+          }
+        ]
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPLACE",
+        "confidence": 0.95,
+        "source": "Evolved Policy (v2.1)"
+      },
+      "signals": {
+        "draft_policy_diff": "- \"turbine_wheel_abrasion\": \"repairable if depth < threshold\"",
+        "frequency_stats": {
+          "metric": "Manual Overrides (Turbine Wheel Abrasion)",
+          "value": "8",
+          "trend": "UP (+60%)"
+        }
+      }
+    }
+  },
+  "case_009": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Minor chip (1.0mm) in windshield is within acceptable repair parameters.",
+      "source": "Official Policy",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No overriding safety or cost concerns identified for minor windshield chip in the center."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No safety concerns found",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 1.0,
+        "source": "Current Policy"
+      },
+      "signals": {
+        "draft_policy_diff": "No policy change recommended.",
+        "frequency_stats": {
+          "metric": "Windshield Chip Repairs",
+          "value": "250",
+          "trend": "Stable"
+        }
+      }
+    }
+  },
+  "case_010": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Dent depth 4.0mm. Standard policy allows repair for dents < 5mm.",
+      "source": "Official Policy",
+      "confidence": 1.0
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No applicable override rules found. Proceeding with base decision."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No relevant rules found in institutional knowledge.",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 1.0,
+        "source": "Official Policy"
+      },
+      "signals": {
+        "draft_policy_diff": "N/A",
+        "frequency_stats": {
+          "metric": "Manual Overrides",
+          "value": "2",
+          "trend": "DOWN (-5%)"
+        }
+      }
+    }
+  },
+  "home_001": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Granule loss affecting 25% of asphalt shingle roof falls within acceptable wear and tear, repair authorized.",
+      "source": "Official Policy",
+      "confidence": 0.9
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "DENY_CLAIM",
+        "reason": "OVERRIDE: Extensive granule loss (25%) indicates potential structural compromise and premature roof failure. Claim denied based on long-term cost savings analysis."
+      },
+      "context_metadata": {
+        "rag_override_reason": "Long-term Cost Savings",
+        "retrieved_rules": [
+          {
+            "author": "Risk Management",
+            "content": "Claims with granule loss > 20% should be denied as roof needs replacement shortly"
+          }
+        ]
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "DENY_CLAIM",
+        "confidence": 0.95,
+        "source": "Evolved Policy (v3.0)"
+      },
+      "signals": {
+        "draft_policy_diff": "- \"granule_loss\": \"< 20% repair\"\n+ \"granule_loss\": \"< 20% repair, >=20% deny claim\"",
+        "frequency_stats": {
+          "metric": "Manual Overrides",
+          "value": "32",
+          "trend": "UP (+25%)"
+        }
+      }
+    }
+  },
+  "home_002": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Missing material on shingle roof affecting 5% of the area is within the standard repair threshold.",
+      "source": "Official Policy",
+      "confidence": 0.95
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No override needed based on institutional knowledge. Standard repair policy applies."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No relevant rules found to override the base decision.",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 0.95,
+        "source": "Current Policy"
+      },
+      "signals": {
+        "draft_policy_diff": "No policy change suggested.",
+        "frequency_stats": {
+          "metric": "Missing Shingle Claims (5% area)",
+          "value": "250",
+          "trend": "Stable"
+        }
+      }
+    }
+  },
+  "home_003": {
+    "layer_1_base": {
+      "outcome": "APPROVE_REPAIR",
+      "reason": "Rust on chimney flashing affecting 10% of area falls within acceptable repair parameters based on standard homeowner's policy.",
+      "source": "Official Policy",
+      "confidence": 0.95
+    },
+    "layer_2_inner": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "reason": "No overriding rules found. Standard policy applies."
+      },
+      "context_metadata": {
+        "rag_override_reason": "No safety or cost concerns identified.",
+        "retrieved_rules": []
+      }
+    },
+    "layer_3_outer": {
+      "decision": {
+        "outcome": "APPROVE_REPAIR",
+        "confidence": 0.95,
+        "source": "Official Policy"
+      },
+      "signals": {
+        "draft_policy_diff": "N/A",
+        "frequency_stats": {
+          "metric": "Rust claims on chimney flashing",
+          "value": "25",
+          "trend": "Stable"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "auto": [
+    {
+      "id": "case_001",
+      "title": "Battery Scratch (Shallow)",
+      "image_file": "car_scratch_shallow.png",
+      "visual_findings": {
+        "object_detected": "EV",
+        "damage_type": "scratch",
+        "location": "battery_casing",
+        "severity": "negligible",
+        "depth_mm": 0.5,
+        "visual_evidence": "Faint hairline scratch on battery plate."
+      }
+    },
+    {
+      "id": "case_002",
+      "title": "Battery Puncture (Leak)",
+      "image_file": "ev_battery_puncture_leak.png",
+      "visual_findings": {
+        "object_detected": "EV Battery",
+        "damage_type": "puncture",
+        "location": "battery_casing",
+        "severity": "critical",
+        "depth_mm": 25.0,
+        "visual_evidence": "Jagged hole with visible coolant leakage."
+      }
+    },
+    {
+      "id": "case_003",
+      "title": "Bumper Crack (Plastic)",
+      "image_file": "ev_bumper_minor_crack.png",
+      "visual_findings": {
+        "object_detected": "EV Rear Bumper",
+        "damage_type": "crack",
+        "location": "rear_bumper_plastic",
+        "severity": "minor",
+        "depth_mm": 1.0,
+        "visual_evidence": "Vertical stress crack in plastic fascia."
+      }
+    },
+    {
+      "id": "case_004",
+      "title": "Door Ding",
+      "image_file": "ev_door_ding_parking.png",
+      "visual_findings": {
+        "object_detected": "EV Door",
+        "damage_type": "dent",
+        "location": "side_door_panel",
+        "severity": "minor",
+        "depth_mm": 3.0,
+        "visual_evidence": "Small circular depression. Paint intact."
+      }
+    },
+    {
+      "id": "case_005",
+      "title": "Undercarriage Scrape",
+      "image_file": "ev_undercarriage_scrape_road_debris.png",
+      "visual_findings": {
+        "object_detected": "EV Undercarriage Shield",
+        "damage_type": "scrape",
+        "location": "skid_plate",
+        "severity": "moderate",
+        "depth_mm": 1.2,
+        "visual_evidence": "Long linear scratches on aluminum shield."
+      }
+    },
+    {
+      "id": "case_006",
+      "title": "Battery Corrosion",
+      "image_file": "ev_battery_corrosion_connector.png",
+      "visual_findings": {
+        "object_detected": "HV Connector",
+        "damage_type": "corrosion",
+        "location": "hv_cable_junction",
+        "severity": "moderate",
+        "depth_mm": 0.0,
+        "visual_evidence": "Green/White oxidation on orange cable leads."
+      }
+    },
+    {
+      "id": "case_007",
+      "title": "Fender Paint Transfer",
+      "image_file": "ev_fender_paint_transfer.png",
+      "visual_findings": {
+        "object_detected": "EV Front Fender",
+        "damage_type": "scuff",
+        "location": "front_fender",
+        "severity": "minor",
+        "depth_mm": 0.0,
+        "visual_evidence": "White paint transfer marks. No dent."
+      }
+    },
+    {
+      "id": "case_008",
+      "title": "Wheel Curb Rash",
+      "image_file": "ev_wheel_curb_rash.png",
+      "visual_findings": {
+        "object_detected": "EV Turbine Wheel",
+        "damage_type": "abrasion",
+        "location": "wheel_rim",
+        "severity": "moderate",
+        "depth_mm": 2.0,
+        "visual_evidence": "Deep abrasion along 6 inches of rim edge."
+      }
+    },
+    {
+      "id": "case_009",
+      "title": "Windshield Chip",
+      "image_file": "ev_windshield_chip.png",
+      "visual_findings": {
+        "object_detected": "EV Windshield",
+        "damage_type": "chip",
+        "location": "glass_center",
+        "severity": "minor",
+        "depth_mm": 1.0,
+        "visual_evidence": "Star-shaped rock chip approx 1cm diameter."
+      }
+    },
+    {
+      "id": "case_010",
+      "title": "Frunk Dent (Hail)",
+      "image_file": "ev_frunk_dented_hood.png",
+      "visual_findings": {
+        "object_detected": "EV Hood",
+        "damage_type": "dent",
+        "location": "frunk_panel",
+        "severity": "moderate",
+        "depth_mm": 4.0,
+        "visual_evidence": "Multiple small depression dents consistent with hail."
+      }
+    }
+  ],
+  "home": [
+    {
+      "id": "home_001",
+      "title": "Granule Loss (25%)",
+      "image_file": "roof_damage.png",
+      "visual_findings": {
+        "object_detected": "Asphalt Shingle Roof",
+        "damage_type": "granule_loss",
+        "affected_area_percentage": 25,
+        "visual_evidence": "Significant granule loss observed in >20% of surface."
+      }
+    },
+    {
+      "id": "home_002",
+      "title": "Missing Shingles",
+      "image_file": "roof_missing_shingles_wind.png",
+      "visual_findings": {
+        "object_detected": "Shingle Roof",
+        "damage_type": "missing_material",
+        "affected_area_percentage": 5,
+        "visual_evidence": "3-4 shingles completely detached exposing underlayment."
+      }
+    },
+    {
+      "id": "home_003",
+      "title": "Chimney Rust",
+      "image_file": "roof_flashing_rusted_chimney.png",
+      "visual_findings": {
+        "object_detected": "Chimney Flashing",
+        "damage_type": "rust",
+        "affected_area_percentage": 10,
+        "visual_evidence": "Heavy oxidation on metal flashing base."
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "policy_type": "EV_COMMERCIAL_FLEET_v2.0",
+  "coverage_limits": {
+    "liability": 1000000,
+    "collision": 50000,
+    "comprehensive": 50000
+  },
+  "deductibles": {
+    "collision": 1000,
+    "comprehensive": 500
+  },
+  "terms": {
+    "battery_damage": "Standard repair allowed for cosmetic scratches < 2mm depth.",
+    "glass_coverage": "Full glass coverage with $0 deductible for chip repairs.",
+    "adas_calibration": "Covered up to $500 per incident.",
+    "rental_reimbursement": "Up to $50/day for max 30 days.",
+    "paint_protection": "Cosmetic scuffs excluded unless substrate damage.",
+    "undercarriage_damage": "Protective shield damage covered only if structural."
+  },
+  "exclusions": [
+    "Track use",
+    "Intentional damage",
+    "Unapproved firmware modifications"
+  ]
+}

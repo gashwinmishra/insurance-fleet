@@ -1,0 +1,22 @@
+{
+  "policy_type": "HO-3_STANDARD_v4.5",
+  "coverage_limits": {
+    "dwelling": 500000,
+    "other_structures": 50000,
+    "personal_property": 250000
+  },
+  "deductibles": {
+    "all_peril": 2500,
+    "wind_hail": 5000
+  },
+  "terms": {
+    "roof_damage": "Patch repair allowed if granule loss is visible in < 20% of the image.",
+    "water_damage": "Covered if sudden and accidental. Gradual seepage excluded.",
+    "mold_remediation": "Limited to $5,000 sub-limit.",
+    "chimney_flashing": "Rust/Corrosion excluded as wear & tear."
+  },
+  "conditions": {
+    "inspection_frequency": "Every 3 years required for roofs > 15 years old.",
+    "vacancy": "Coverage suspended if vacant > 60 days."
+  }
+}

@@ -1,0 +1,7 @@
+pandas
+streamlit
+google-cloud-bigquery
+watchdog
+google-cloud-aiplatform
+google-adk
+google-genai
