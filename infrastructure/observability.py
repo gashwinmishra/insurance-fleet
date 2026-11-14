@@ -1,28 +1,127 @@
+import asyncio
 import json
 import logging
+import re
 import time
 import uuid
 from contextlib import contextmanager
 from datetime import datetime, timezone
-from typing import Any, Dict, Generator, List, Optional
+from typing import Any, Dict, Generator, List, Optional, Tuple
+
+
+class PIIRedactor:
+    """
+    Enterprise PII & Sensitive Data Redaction Engine (Pillar 4: Observability & Tracing).
+    Automatically scrubs and masks Personally Identifiable Information (PII), financial
+    identifiers, vehicle identifiers (VIN/Plates), and credentials from logs, spans,
+    tool inputs/outputs, and BigQuery telemetry payloads before persistence.
+    """
+
+    SENSITIVE_KEYS = {
+        "ssn",
+        "social_security",
+        "tax_id",
+        "email",
+        "phone",
+        "phone_number",
+        "credit_card",
+        "card_number",
+        "cvv",
+        "vin",
+        "license_plate",
+        "policyholder_name",
+        "customer_name",
+        "home_address",
+        "street_address",
+        "api_key",
+        "secret",
+        "password",
+        "token",
+        "authorization",
+    }
+
+    PATTERNS: List[Tuple[re.Pattern, str]] = [
+        # Social Security Numbers (XXX-XX-XXXX)
+        (re.compile(r"\b\d{3}-\d{2}-\d{4}\b"), "[REDACTED_SSN]"),
+        # Email Addresses
+        (re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"), "[REDACTED_EMAIL]"),
+        # Credit Card Numbers (13-16 digits)
+        (re.compile(r"\b(?:\d[ -]*?){13,16}\b"), "[REDACTED_CC]"),
+        # US/International Phone Numbers
+        (re.compile(r"(?:\+?1[-.\s]?)?\(?\d{3}\)?[-.\s]\d{3}[-.\s]\d{4}\b"), "[REDACTED_PHONE]"),
+        # 17-character standard Vehicle Identification Numbers (VIN)
+        (re.compile(r"\b[A-HJ-NPR-Z0-9]{17}\b"), "[REDACTED_VIN]"),
+        # API Keys & Bearer Tokens
+        (re.compile(r"(?:Bearer\s+[A-Za-z0-9\-._~+/]+=*|AIza[0-9A-Za-z\-_]{35}|gh[pousr]_[A-Za-z0-9_]{20,})"), "[REDACTED_SECRET]"),
+    ]
+
+    @classmethod
+    def redact_text(cls, text: str) -> Tuple[str, int]:
+        """Scrubs inline PII patterns from a string and returns (redacted_text, redaction_count)."""
+        if not text or not isinstance(text, str):
+            return str(text or ""), 0
+        count = 0
+        sanitized = text
+        for pattern, replacement in cls.PATTERNS:
+            sanitized, num_subs = pattern.subn(replacement, sanitized)
+            count += num_subs
+        return sanitized, count
+
+    @classmethod
+    def redact(cls, data: Any) -> Tuple[Any, int]:
+        """
+        Recursively sanitizes strings, dicts, and lists, masking both sensitive keys
+        and inline regex matches. Returns (sanitized_data, total_redaction_count).
+        """
+        if isinstance(data, str):
+            return cls.redact_text(data)
+
+        if isinstance(data, dict):
+            total_count = 0
+            sanitized_dict: Dict[str, Any] = {}
+            for k, v in data.items():
+                key_lower = str(k).lower().strip()
+                if key_lower in cls.SENSITIVE_KEYS and v is not None:
+                    sanitized_dict[k] = f"[REDACTED_{key_lower.upper()}]"
+                    total_count += 1
+                else:
+                    clean_v, c = cls.redact(v)
+                    sanitized_dict[k] = clean_v
+                    total_count += c
+            return sanitized_dict, total_count
+
+        if isinstance(data, list):
+            total_count = 0
+            sanitized_list = []
+            for item in data:
+                clean_item, c = cls.redact(item)
+                sanitized_list.append(clean_item)
+                total_count += c
+            return sanitized_list, total_count
+
+        return data, 0
 
 
 class StructuredJsonFormatter(logging.Formatter):
-    """Formats standard Python log records as Cloud Logging compatible JSON."""
+    """Formats standard Python log records as Cloud Logging compatible JSON with PII redaction."""
 
     def format(self, record: logging.LogRecord) -> str:
+        clean_msg, msg_redactions = PIIRedactor.redact_text(record.getMessage())
         payload: Dict[str, Any] = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "severity": record.levelname,
             "logger": record.name,
-            "message": record.getMessage(),
+            "message": clean_msg,
+            "pii_redactions": msg_redactions,
         }
         if hasattr(record, "trace_id"):
             payload["trace_id"] = getattr(record, "trace_id")
         if hasattr(record, "span_id"):
             payload["span_id"] = getattr(record, "span_id")
         if hasattr(record, "extra_fields") and isinstance(getattr(record, "extra_fields"), dict):
-            payload.update(getattr(record, "extra_fields"))
+            clean_extra, extra_redactions = PIIRedactor.redact(getattr(record, "extra_fields"))
+            payload.update(clean_extra)
+            payload["pii_redactions"] += extra_redactions
         return json.dumps(payload)
 
 
@@ -38,7 +137,7 @@ def get_structured_logger(name: str = "insurance_fleet") -> logging.Logger:
 
 
 class Span:
-    """Represents a single timed operation or agent/tool execution span."""
+    """Represents a single timed operation or agent/tool execution span with automatic PII scrubbing."""
 
     def __init__(
         self,
@@ -58,7 +157,9 @@ class Span:
         self.ended_at: Optional[str] = None
         self.duration_ms: float = 0.0
         self.status: str = "IN_PROGRESS"
-        self.attributes: Dict[str, Any] = dict(attributes or {})
+        clean_attrs, redaction_cnt = PIIRedactor.redact(dict(attributes or {}))
+        self.attributes: Dict[str, Any] = clean_attrs
+        self.pii_redactions_count: int = redaction_cnt
         self.tool_calls: List[Dict[str, Any]] = []
         self.events: List[Dict[str, Any]] = []
 
@@ -69,19 +170,25 @@ class Span:
         tool_output: Any,
         duration_ms: float = 0.0,
     ) -> None:
+        clean_args, args_redacted = PIIRedactor.redact(tool_args)
+        clean_output, out_redacted = PIIRedactor.redact_text(str(tool_output)[:400])
+        self.pii_redactions_count += args_redacted + out_redacted
         self.tool_calls.append({
             "tool_name": tool_name,
-            "arguments": tool_args,
-            "output_preview": str(tool_output)[:300],
+            "arguments": clean_args,
+            "output_preview": clean_output,
             "duration_ms": round(duration_ms, 2),
+            "pii_redacted": (args_redacted + out_redacted) > 0,
             "timestamp": datetime.now(timezone.utc).isoformat(),
         })
 
     def add_event(self, event_name: str, metadata: Optional[Dict[str, Any]] = None) -> None:
+        clean_meta, meta_redacted = PIIRedactor.redact(metadata or {})
+        self.pii_redactions_count += meta_redacted
         self.events.append({
             "event": event_name,
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "metadata": metadata or {},
+            "metadata": clean_meta,
         })
 
     def finish(self, status: str = "OK", attributes: Optional[Dict[str, Any]] = None) -> None:
@@ -89,7 +196,9 @@ class Span:
         self.ended_at = datetime.now(timezone.utc).isoformat()
         self.status = status
         if attributes:
-            self.attributes.update(attributes)
+            clean_attrs, c = PIIRedactor.redact(attributes)
+            self.attributes.update(clean_attrs)
+            self.pii_redactions_count += c
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -102,6 +211,7 @@ class Span:
             "ended_at": self.ended_at,
             "duration_ms": self.duration_ms,
             "status": self.status,
+            "pii_redactions_count": self.pii_redactions_count,
             "attributes": self.attributes,
             "tool_calls": self.tool_calls,
             "events": self.events,
@@ -110,15 +220,16 @@ class Span:
 
 class ObservabilityTracer:
     """
-    End-to-End Multi-Agent Distributed Tracer.
-    Captures spans, tool invocations, confidence drift across layers, and latency waterfalls.
+    End-to-End Multi-Agent Distributed Tracer with Automatic PII Redaction.
+    Captures spans, tool invocations (intent vs. outcome), model routing telemetry,
+    PII redaction counts, confidence drift across layers, and latency waterfalls.
     """
 
     def __init__(self, claim_id: Optional[str] = None):
         self.trace_id: str = f"trace_{uuid.uuid4().hex[:16]}"
         self.claim_id: str = claim_id or f"claim_{uuid.uuid4().hex[:8]}"
         self.created_at: str = datetime.now(timezone.utc).isoformat()
-        self.start_Perf: float = time.perf_counter()
+        self.start_perf: float = time.perf_counter()
         self.spans: List[Span] = []
         self._active_span: Optional[Span] = None
         self.logger = get_structured_logger("insurance_fleet.tracer")
@@ -160,13 +271,15 @@ class ObservabilityTracer:
                         "operation": name,
                         "duration_ms": span.duration_ms,
                         "status": span.status,
+                        "pii_redactions_count": span.pii_redactions_count,
                     },
                 },
             )
 
     def build_summary(self, decision_trace: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        total_duration_ms = round((time.perf_counter() - self.start_Perf) * 1000.0, 2)
+        total_duration_ms = round((time.perf_counter() - self.start_perf) * 1000.0, 2)
         tool_call_count = sum(len(s.tool_calls) for s in self.spans)
+        total_pii_redactions = sum(s.pii_redactions_count for s in self.spans)
 
         confidence_progression: Dict[str, float] = {}
         outcome_progression: Dict[str, str] = {}
@@ -192,6 +305,7 @@ class ObservabilityTracer:
             "total_duration_ms": total_duration_ms,
             "span_count": len(self.spans),
             "tool_call_count": tool_call_count,
+            "pii_redactions_applied": total_pii_redactions,
             "confidence_progression": confidence_progression,
             "outcome_progression": outcome_progression,
             "spans": [s.to_dict() for s in self.spans],

@@ -1,3 +1,4 @@
+import asyncio
 import json
 import os
 import re
@@ -10,6 +11,8 @@ class RAGRetriever:
     Context & Memory Engine for Institutional Knowledge (Fast Loop RAG).
     Scores institutional knowledge rules using hybrid lexical token overlap,
     domain synonym expansion, and authority weight boosting.
+    Supports both synchronous (`retrieve`, `add_knowledge_rule`) and non-blocking
+    asynchronous (`aretrieve`, `aadd_knowledge_rule`) operations.
     """
 
     SYNONYM_MAP = {
@@ -30,6 +33,12 @@ class RAGRetriever:
         base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.knowledge_path = os.path.join(base_path, os.path.normpath(knowledge_path))
         self._knowledge_base: List[Dict[str, Any]] = self._load_knowledge()
+        self._async_lock: Optional[asyncio.Lock] = None
+
+    def _get_lock(self) -> asyncio.Lock:
+        if self._async_lock is None:
+            self._async_lock = asyncio.Lock()
+        return self._async_lock
 
     def _load_knowledge(self) -> List[Dict[str, Any]]:
         try:
@@ -73,7 +82,6 @@ class RAGRetriever:
         lexical_score = len(overlap) / max(len(query_tokens), 1)
         authority_weight = float(rule.get("weight", 0.8))
 
-        # Domain alignment bonus
         domain_bonus = 0.0
         source_lower = str(rule.get("source", "")).lower()
         if claim_type == "home" and ("home" in source_lower or "catastrophe" in source_lower):
@@ -113,9 +121,18 @@ class RAGRetriever:
         if scored_hits:
             return scored_hits[:top_k]
 
-        # Graceful fallback: return highest-weighted rules if strict lexical match missed
         fallback = sorted(self._knowledge_base, key=lambda r: r.get("weight", 0.0), reverse=True)
         return fallback[:top_k]
+
+    async def aretrieve(
+        self,
+        query: Optional[str] = None,
+        claim_type: Optional[str] = None,
+        top_k: int = 5,
+        min_score: float = 0.15,
+    ) -> List[Dict[str, Any]]:
+        """Asynchronous non-blocking RAG retrieval to prevent UI/event-loop blocking."""
+        return await asyncio.to_thread(self.retrieve, query, claim_type, top_k, min_score)
 
     def add_knowledge_rule(
         self,
@@ -145,3 +162,17 @@ class RAGRetriever:
                 pass
         return new_rule
 
+    async def aadd_knowledge_rule(
+        self,
+        content: str,
+        author: str = "Human Adjuster (HITL)",
+        source: str = "Adjuster Override Feedback",
+        context: str = "Live Claim Override",
+        weight: float = 0.90,
+        persist: bool = True,
+    ) -> Dict[str, Any]:
+        """Asynchronous non-blocking rule insertion."""
+        async with self._get_lock():
+            return await asyncio.to_thread(
+                self.add_knowledge_rule, content, author, source, context, weight, persist
+            )

@@ -1,10 +1,11 @@
+import asyncio
 import os
 import time
 import uuid
 from typing import Any, Dict, Optional
 
 from agents.adk_visual import AdkVisualAgent
-from agents.adk_adjudicator import AdkAdjudicatorAgent
+from agents.adk_adjudicator import AdkAdjudicatorAgent, ModelRouter
 from agents.tools import (
     lookup_official_policy,
     retrieve_institutional_knowledge,
@@ -21,10 +22,15 @@ from infrastructure.rag_retriever import RAGRetriever
 
 class ClaimOrchestrator:
     """
-    Multi-Agent Workflow Orchestrator (Pillar 3: Orchestration & Logic).
-    Coordinates Perception (`AdkVisualAgent`), 3-Loop Cognition (`AdkAdjudicatorAgent`),
-    Confidence & Safety Escalation Gating, Two-Tier Memory (`MemoryStore`), and
-    Distributed Tracing (`ObservabilityTracer` + `BQLogger`).
+    Multi-Agent Workflow Orchestrator with Strategic Model Routing & Async Support (Pillar 3).
+    Coordinates:
+      1. Intake & Triage Guardrail
+      2. Multimodal Perception (`AdkVisualAgent` on `gemini-2.0-flash-001`)
+      3. Strategic Model Routing (`ModelRouter` selecting `gemini-1.5-pro-002` for complex/high-stakes
+         reasoning & Slow-Loop policy synthesis vs `gemini-2.0-flash-001` for routine claims)
+      4. 3-Loop Cognitive Adjudication (`AdkAdjudicatorAgent`)
+      5. Safety & Confidence Escalation Gate
+      6. Persistent SQLite/JSON Memory & PII-Scrubbed BigQuery Telemetry (`arun` & `run`)
     """
 
     CONFIDENCE_THRESHOLD = 0.75
@@ -33,6 +39,7 @@ class ClaimOrchestrator:
         self.default_claim_type = default_claim_type
         self.visual_agent = AdkVisualAgent()
         self.adjudicator = AdkAdjudicatorAgent()
+        self.router = ModelRouter()
         self.logger = BQLogger()
         self.memory = MemoryStore()
         self.rag = RAGRetriever()
@@ -59,11 +66,12 @@ class ClaimOrchestrator:
             )
             span.add_event("session_initialized", {"session_id": session_id})
 
-        # 2. Multi-Modal Visual Perception
+        # 2. Multi-Modal Visual Perception (Fast Tier: gemini-2.0-flash-001)
+        perception_route = self.router.route({}, claim_type=domain, task_stage="visual_perception")
         with tracer.start_span(
             name="visual_perception",
             agent="AdkVisualAgent",
-            attributes={"context": domain},
+            attributes={"context": domain, "routed_model": perception_route["selected_model"]},
         ) as span:
             raw_findings = self.visual_agent.analyze(image_input, context=domain)
             findings = validate_visual_findings(raw_findings, claim_type=domain)
@@ -73,6 +81,7 @@ class ClaimOrchestrator:
                     "object_detected": findings.get("object_detected"),
                     "damage_type": findings.get("damage_type"),
                     "severity": findings.get("severity"),
+                    "routed_model": perception_route["selected_model"],
                 },
             )
             self.memory.append_session_event(
@@ -81,17 +90,32 @@ class ClaimOrchestrator:
                 content=findings,
             )
 
-        # 3. 3-Loop Cognitive Adjudication & Tool Instrumentation
+        # 3. Strategic Model Routing (Flash vs Pro based on complexity/risk)
+        adjudication_route = self.router.route(
+            findings, claim_type=domain, task_stage="tiered_adjudication"
+        )
+        with tracer.start_span(
+            name="strategic_model_routing",
+            agent="ModelRouter",
+            attributes=adjudication_route,
+        ) as span:
+            span.add_event("model_selected", adjudication_route)
+
+        # 4. 3-Loop Cognitive Adjudication & Tool Instrumentation
         with tracer.start_span(
             name="tiered_adjudication",
             agent="AdkAdjudicatorAgent",
-            attributes={"claim_type": domain, "damage_type": findings.get("damage_type")},
+            attributes={
+                "claim_type": domain,
+                "damage_type": findings.get("damage_type"),
+                "selected_model": adjudication_route["selected_model"],
+                "routing_tier": adjudication_route["tier"],
+            },
         ) as span:
             dmg = findings.get("damage_type", "unknown")
             loc = findings.get("location", "")
             query_str = f"{findings.get('object_detected', '')} {dmg} {loc}".strip()
 
-            # Record deterministic tool invocations in span trace
             t0 = time.perf_counter()
             policy_out = lookup_official_policy(domain, dmg)
             span.record_tool_call(
@@ -123,6 +147,7 @@ class ClaimOrchestrator:
                 findings,
                 claim_type=domain,
                 session_id=session_id,
+                target_model=adjudication_route["selected_model"],
             )
             decision_trace = validate_adjudication_trace(raw_trace)
 
@@ -138,6 +163,7 @@ class ClaimOrchestrator:
             span.finish(
                 status="OK",
                 attributes={
+                    "selected_model": adjudication_route["selected_model"],
                     "layer_1_outcome": decision_trace["layer_1_base"]["outcome"],
                     "layer_2_outcome": decision_trace["layer_2_inner"]["decision"]["outcome"],
                     "layer_3_outcome": decision_trace["layer_3_outer"]["decision"]["outcome"],
@@ -149,7 +175,7 @@ class ClaimOrchestrator:
                 content=decision_trace["layer_2_inner"]["decision"],
             )
 
-        # 4. Safety & Confidence Escalation Gate
+        # 5. Safety & Confidence Escalation Gate
         with tracer.start_span(
             name="safety_and_confidence_gate",
             agent="EscalationGuardrail",
@@ -157,7 +183,7 @@ class ClaimOrchestrator:
             escalation = self._evaluate_escalation_gate(findings, decision_trace)
             span.finish(status="OK", attributes=escalation)
 
-        # 5. Memory Persistence & BigQuery Audit Logging
+        # 6. Memory Persistence & BigQuery Audit Logging
         with tracer.start_span(
             name="telemetry_and_memory_commit",
             agent="BQLogger+MemoryStore",
@@ -186,9 +212,14 @@ class ClaimOrchestrator:
             "claim_type": domain,
             "findings": findings,
             "decision_trace": decision_trace,
+            "model_routing": adjudication_route,
             "escalation": escalation,
             "observability": final_trace_summary,
         }
+
+    async def arun(self, image_input: str, claim_type: Optional[str] = None) -> Dict[str, Any]:
+        """Asynchronous non-blocking orchestration flow preventing UI event-loop blocking."""
+        return await asyncio.to_thread(self.run, image_input, claim_type)
 
     def _evaluate_escalation_gate(
         self,
@@ -268,7 +299,7 @@ class ClaimOrchestrator:
                 source=f"HITL Override ({claim_type.upper()} Claims)",
                 context=f"Claim #{claim_id[:8]} Correction",
                 weight=0.92,
-                persist=False,  # Keep in-memory during runtime so git working tree stays clean
+                persist=False,
             )
 
         return {

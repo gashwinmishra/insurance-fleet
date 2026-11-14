@@ -1,5 +1,5 @@
 steps:
-  # 0. Run automated unit & integration tests across all 5 evaluation pillars
+  # 0. Run 5-Pillar Unit Tests & Generative Evaluation Suite against Golden Dataset
   - name: 'python:3.11-slim'
     entrypoint: 'bash'
     args:
@@ -7,6 +7,7 @@ steps:
       - |
         pip install --no-cache-dir -r requirements.txt
         ADK_OFFLINE_MODE=1 python3 -m unittest discover -s tests -v
+        ADK_OFFLINE_MODE=1 python3 evals/run_eval.py
 
   # 1. Build the container image
   - name: 'gcr.io/cloud-builders/docker'
@@ -34,4 +35,3 @@ steps:
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/insurance-fleet/app'
-

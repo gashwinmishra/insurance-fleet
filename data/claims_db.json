@@ -29,15 +29,1714 @@
       "location": "rear_bumper_plastic",
       "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
       "pattern_key": "auto:crack:rear_bumper_plastic"
+    },
+    {
+      "claim_id": "da078565-4d6b-49fa-ac5e-922619e32a6c",
+      "trace_id": "trace_8c34b71ea8a84ea8",
+      "timestamp": "2026-11-14T16:32:36.837802+00:00",
+      "claim_type": "auto",
+      "damage_type": "scratch",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS",
+      "pattern_key": "auto:scratch:battery_casing"
+    },
+    {
+      "claim_id": "6288e30c-ec08-44dc-8201-bb88ebc1a219",
+      "trace_id": "trace_69169d291cfd4f70",
+      "timestamp": "2026-11-14T16:32:37.197727+00:00",
+      "claim_type": "home",
+      "damage_type": "granule_loss",
+      "location": "roof_surface",
+      "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+      "pattern_key": "home:granule_loss:roof_surface"
+    },
+    {
+      "claim_id": "72c012a8-8b2c-4706-b1af-684841383cf9",
+      "trace_id": "trace_08ccd68ebf4d4860",
+      "timestamp": "2026-11-14T16:32:37.574874+00:00",
+      "claim_type": "auto",
+      "damage_type": "scratch",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS",
+      "pattern_key": "auto:scratch:battery_casing"
+    },
+    {
+      "claim_id": "c712c6b1-aca2-45b9-92e6-2e53aa4909b8",
+      "trace_id": "trace_a6c7bd2b1b6e4006",
+      "timestamp": "2026-11-14T16:32:37.581371+00:00",
+      "claim_type": "auto",
+      "damage_type": "puncture",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS + HAZMAT FEE",
+      "pattern_key": "auto:puncture:battery_casing"
+    },
+    {
+      "claim_id": "7a6ca972-0324-43a9-a279-15d417d71022",
+      "trace_id": "trace_0b26a8e724cc4222",
+      "timestamp": "2026-11-14T16:32:37.588983+00:00",
+      "claim_type": "auto",
+      "damage_type": "crack",
+      "location": "rear_bumper_plastic",
+      "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+      "pattern_key": "auto:crack:rear_bumper_plastic"
+    },
+    {
+      "claim_id": "df007e22-bc72-4ff2-b8ec-3b26e582a3db",
+      "trace_id": "trace_857aaec73de143c6",
+      "timestamp": "2026-11-14T16:32:37.596614+00:00",
+      "claim_type": "auto",
+      "damage_type": "dent",
+      "location": "side_door_panel",
+      "outcome": "APPROVE_PDR_SERVICE",
+      "pattern_key": "auto:dent:side_door_panel"
+    },
+    {
+      "claim_id": "a51dce3f-8ed0-45ed-a205-f02044a1f4d5",
+      "trace_id": "trace_6a8e84b4f2f04f53",
+      "timestamp": "2026-11-14T16:32:37.605335+00:00",
+      "claim_type": "auto",
+      "damage_type": "corrosion",
+      "location": "hv_cable_junction",
+      "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+      "pattern_key": "auto:corrosion:hv_cable_junction"
+    },
+    {
+      "claim_id": "315d7e4f-72a0-41b0-b74d-8292dd775a82",
+      "trace_id": "trace_7ffba77412be4efe",
+      "timestamp": "2026-11-14T16:32:37.612558+00:00",
+      "claim_type": "home",
+      "damage_type": "granule_loss",
+      "location": "roof_surface",
+      "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+      "pattern_key": "home:granule_loss:roof_surface"
+    },
+    {
+      "claim_id": "d61b7342-7335-4e21-b58c-acc4976cab37",
+      "trace_id": "trace_35af27f246a247bb",
+      "timestamp": "2026-11-14T16:32:37.620530+00:00",
+      "claim_type": "home",
+      "damage_type": "missing_material",
+      "location": "roof_surface",
+      "outcome": "APPROVE_TAB_SEAL_ONLY",
+      "pattern_key": "home:missing_material:roof_surface"
+    },
+    {
+      "claim_id": "cee81f90-8e70-4300-90e9-38b4cf340ffc",
+      "trace_id": "trace_1e8f2f6a4f8747c9",
+      "timestamp": "2026-11-14T16:32:37.634096+00:00",
+      "claim_type": "home",
+      "damage_type": "rust",
+      "location": "roof_surface",
+      "outcome": "APPROVE_RESEAL_AND_PAINT",
+      "pattern_key": "home:rust:roof_surface"
+    },
+    {
+      "claim_id": "c4ba3f4a-769f-4395-a5cb-396a46859b16",
+      "trace_id": "trace_d9ac6b7b1aba4977",
+      "timestamp": "2026-11-14T16:32:56.452598+00:00",
+      "claim_type": "auto",
+      "damage_type": "scratch",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS",
+      "pattern_key": "auto:scratch:battery_casing"
+    },
+    {
+      "claim_id": "0b96cda9-607f-48fe-8c5c-d36c83c596e7",
+      "trace_id": "trace_a0868dd6182a4502",
+      "timestamp": "2026-11-14T16:32:56.467686+00:00",
+      "claim_type": "auto",
+      "damage_type": "puncture",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS + HAZMAT FEE",
+      "pattern_key": "auto:puncture:battery_casing"
+    },
+    {
+      "claim_id": "692c0f44-26ea-4234-a820-3601a518843a",
+      "trace_id": "trace_410cd00144a844e2",
+      "timestamp": "2026-11-14T16:32:56.474774+00:00",
+      "claim_type": "auto",
+      "damage_type": "crack",
+      "location": "rear_bumper_plastic",
+      "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+      "pattern_key": "auto:crack:rear_bumper_plastic"
+    },
+    {
+      "claim_id": "a9367630-0e14-4689-87a4-0f5cbc642960",
+      "trace_id": "trace_ee25ace03ba14015",
+      "timestamp": "2026-11-14T16:32:56.481704+00:00",
+      "claim_type": "auto",
+      "damage_type": "dent",
+      "location": "side_door_panel",
+      "outcome": "APPROVE_PDR_SERVICE",
+      "pattern_key": "auto:dent:side_door_panel"
+    },
+    {
+      "claim_id": "5bb70275-b2b6-49c2-8d1b-01579dd64aa6",
+      "trace_id": "trace_96ce771b120445cd",
+      "timestamp": "2026-11-14T16:32:56.495880+00:00",
+      "claim_type": "auto",
+      "damage_type": "corrosion",
+      "location": "hv_cable_junction",
+      "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+      "pattern_key": "auto:corrosion:hv_cable_junction"
+    },
+    {
+      "claim_id": "7989455d-66ad-468e-a8af-32b0774614f3",
+      "trace_id": "trace_dc2883c32a9d470a",
+      "timestamp": "2026-11-14T16:32:56.511266+00:00",
+      "claim_type": "home",
+      "damage_type": "granule_loss",
+      "location": "roof_surface",
+      "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+      "pattern_key": "home:granule_loss:roof_surface"
+    },
+    {
+      "claim_id": "b14ee765-d47f-4d33-aa02-52a9fb7ac924",
+      "trace_id": "trace_0afa959d4bf94303",
+      "timestamp": "2026-11-14T16:32:56.523525+00:00",
+      "claim_type": "home",
+      "damage_type": "missing_material",
+      "location": "roof_surface",
+      "outcome": "APPROVE_TAB_SEAL_ONLY",
+      "pattern_key": "home:missing_material:roof_surface"
+    },
+    {
+      "claim_id": "0f82093f-a6e3-4ae3-96a0-dfd2f4525397",
+      "trace_id": "trace_efdcd76736b74f3f",
+      "timestamp": "2026-11-14T16:32:56.531377+00:00",
+      "claim_type": "home",
+      "damage_type": "rust",
+      "location": "roof_surface",
+      "outcome": "APPROVE_RESEAL_AND_PAINT",
+      "pattern_key": "home:rust:roof_surface"
+    },
+    {
+      "claim_id": "304a24f9-8c8a-422a-9a78-536b38afd212",
+      "trace_id": "trace_62886505317b43c3",
+      "timestamp": "2026-11-14T16:34:54.181517+00:00",
+      "claim_type": "auto",
+      "damage_type": "scratch",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS",
+      "pattern_key": "auto:scratch:battery_casing"
+    },
+    {
+      "claim_id": "cfbed59e-cc10-455a-81a7-b8a90b2744bb",
+      "trace_id": "trace_5cad8b3fdcf74a40",
+      "timestamp": "2026-11-14T16:34:54.543325+00:00",
+      "claim_type": "home",
+      "damage_type": "granule_loss",
+      "location": "roof_surface",
+      "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+      "pattern_key": "home:granule_loss:roof_surface"
+    },
+    {
+      "claim_id": "bb405c45-a03d-4400-b7c2-eaba84858814",
+      "trace_id": "trace_f214f67d89e7437b",
+      "timestamp": "2026-11-14T16:34:54.909029+00:00",
+      "claim_type": "auto",
+      "damage_type": "scratch",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS",
+      "pattern_key": "auto:scratch:battery_casing"
+    },
+    {
+      "claim_id": "6d74ca5d-75e1-4b1c-a53b-4bd0c2c9b177",
+      "trace_id": "trace_60d22a6da9e64635",
+      "timestamp": "2026-11-14T16:34:54.919059+00:00",
+      "claim_type": "auto",
+      "damage_type": "puncture",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS + HAZMAT FEE",
+      "pattern_key": "auto:puncture:battery_casing"
+    },
+    {
+      "claim_id": "20474995-cd0c-41ea-b0fb-03ec2fff7f31",
+      "trace_id": "trace_2eac909e309941b6",
+      "timestamp": "2026-11-14T16:34:54.933273+00:00",
+      "claim_type": "auto",
+      "damage_type": "crack",
+      "location": "rear_bumper_plastic",
+      "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+      "pattern_key": "auto:crack:rear_bumper_plastic"
+    },
+    {
+      "claim_id": "6f5b02ff-68bd-4268-8ee4-e88c808143c2",
+      "trace_id": "trace_05c23496a8a7453c",
+      "timestamp": "2026-11-14T16:34:54.942154+00:00",
+      "claim_type": "auto",
+      "damage_type": "dent",
+      "location": "side_door_panel",
+      "outcome": "APPROVE_PDR_SERVICE",
+      "pattern_key": "auto:dent:side_door_panel"
+    },
+    {
+      "claim_id": "9674de81-d884-4574-942c-6cd31aeb51cd",
+      "trace_id": "trace_11f7be6ad2384173",
+      "timestamp": "2026-11-14T16:34:54.954426+00:00",
+      "claim_type": "auto",
+      "damage_type": "corrosion",
+      "location": "hv_cable_junction",
+      "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+      "pattern_key": "auto:corrosion:hv_cable_junction"
+    },
+    {
+      "claim_id": "303f0d39-afe0-4a61-8858-a064bbf83330",
+      "trace_id": "trace_97230634754d4bc9",
+      "timestamp": "2026-11-14T16:34:54.967215+00:00",
+      "claim_type": "home",
+      "damage_type": "granule_loss",
+      "location": "roof_surface",
+      "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+      "pattern_key": "home:granule_loss:roof_surface"
+    },
+    {
+      "claim_id": "0d634e73-bc69-42e2-889e-42556174da27",
+      "trace_id": "trace_3d530198e43e4a2b",
+      "timestamp": "2026-11-14T16:34:54.978091+00:00",
+      "claim_type": "home",
+      "damage_type": "missing_material",
+      "location": "roof_surface",
+      "outcome": "APPROVE_TAB_SEAL_ONLY",
+      "pattern_key": "home:missing_material:roof_surface"
+    },
+    {
+      "claim_id": "bab82de9-38dc-48ef-ad89-9e511b0309d3",
+      "trace_id": "trace_e886312cf86046d5",
+      "timestamp": "2026-11-14T16:34:54.991671+00:00",
+      "claim_type": "home",
+      "damage_type": "rust",
+      "location": "roof_surface",
+      "outcome": "APPROVE_RESEAL_AND_PAINT",
+      "pattern_key": "home:rust:roof_surface"
+    },
+    {
+      "claim_id": "f007a80d-ba91-4ae9-9834-700baf1ea27d",
+      "trace_id": "trace_12ec45407c7548c4",
+      "timestamp": "2026-11-14T16:35:00.429835+00:00",
+      "claim_type": "auto",
+      "damage_type": "scratch",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS",
+      "pattern_key": "auto:scratch:battery_casing"
+    },
+    {
+      "claim_id": "167c5f7a-dcee-494c-b60f-cc62acc8a636",
+      "trace_id": "trace_177a5827d8094731",
+      "timestamp": "2026-11-14T16:35:00.440369+00:00",
+      "claim_type": "auto",
+      "damage_type": "puncture",
+      "location": "battery_casing",
+      "outcome": "TOTAL_LOSS + HAZMAT FEE",
+      "pattern_key": "auto:puncture:battery_casing"
+    },
+    {
+      "claim_id": "62436a30-dccc-460d-af13-c5fb97e489d1",
+      "trace_id": "trace_435fc92dace94f25",
+      "timestamp": "2026-11-14T16:35:00.450711+00:00",
+      "claim_type": "auto",
+      "damage_type": "crack",
+      "location": "rear_bumper_plastic",
+      "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+      "pattern_key": "auto:crack:rear_bumper_plastic"
+    },
+    {
+      "claim_id": "1b1ecf8f-bcad-43e4-b3c8-785d7e4ecde9",
+      "trace_id": "trace_355e3f2b71c947c6",
+      "timestamp": "2026-11-14T16:35:00.462235+00:00",
+      "claim_type": "auto",
+      "damage_type": "dent",
+      "location": "side_door_panel",
+      "outcome": "APPROVE_PDR_SERVICE",
+      "pattern_key": "auto:dent:side_door_panel"
+    },
+    {
+      "claim_id": "7d53d0a5-190a-4a7e-a957-945ceea6bae1",
+      "trace_id": "trace_2a27143b881b46b5",
+      "timestamp": "2026-11-14T16:35:00.473270+00:00",
+      "claim_type": "auto",
+      "damage_type": "corrosion",
+      "location": "hv_cable_junction",
+      "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+      "pattern_key": "auto:corrosion:hv_cable_junction"
+    },
+    {
+      "claim_id": "74e353de-e789-4af9-ba6c-f3d7d1e9867d",
+      "trace_id": "trace_b7aabf2a7fb54776",
+      "timestamp": "2026-11-14T16:35:00.482727+00:00",
+      "claim_type": "home",
+      "damage_type": "granule_loss",
+      "location": "roof_surface",
+      "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+      "pattern_key": "home:granule_loss:roof_surface"
+    },
+    {
+      "claim_id": "e3f53781-35d1-45f4-8398-374ce34072d8",
+      "trace_id": "trace_0eb1783c85854d9d",
+      "timestamp": "2026-11-14T16:35:00.497401+00:00",
+      "claim_type": "home",
+      "damage_type": "missing_material",
+      "location": "roof_surface",
+      "outcome": "APPROVE_TAB_SEAL_ONLY",
+      "pattern_key": "home:missing_material:roof_surface"
+    },
+    {
+      "claim_id": "017aaac6-df04-4594-9f1a-a50f68f7dbe5",
+      "trace_id": "trace_6eeab25ed30b494a",
+      "timestamp": "2026-11-14T16:35:00.506698+00:00",
+      "claim_type": "home",
+      "damage_type": "rust",
+      "location": "roof_surface",
+      "outcome": "APPROVE_RESEAL_AND_PAINT",
+      "pattern_key": "home:rust:roof_surface"
     }
   ],
   "human_overrides": [],
   "pattern_counts": {
-    "auto:scratch:battery_casing": 16,
-    "auto:crack:rear_bumper_plastic": 25,
-    "auto:dent:side_door_panel": 42,
+    "auto:scratch:battery_casing": 22,
+    "auto:crack:rear_bumper_plastic": 29,
+    "auto:dent:side_door_panel": 46,
     "home:granule_loss:roof": 19,
     "home:missing_material:roof": 31,
-    "home:granule_loss:roof_surface": 1
+    "home:granule_loss:roof_surface": 7,
+    "auto:puncture:battery_casing": 4,
+    "auto:corrosion:hv_cable_junction": 4,
+    "home:missing_material:roof_surface": 4,
+    "home:rust:roof_surface": 4
+  },
+  "compacted_claim_digests": [],
+  "persistent_sessions": {
+    "session_da078565": [
+      {
+        "timestamp": "2026-11-14T16:32:36.831015+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "da078565-4d6b-49fa-ac5e-922619e32a6c",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:36.834399+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV",
+          "damage_type": "scratch",
+          "location": "battery_casing",
+          "severity": "negligible",
+          "depth_mm": 0.5,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Faint hairline scratch on battery plate."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:32:36.836482+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS",
+          "reason": "Override: ALERT: Disregard the 2mm rule for EV battery plates. We had a fire last week. ANY visual scratch on the battery casing is now a MANDATORY TOTAL LOSS.",
+          "source": "Institutional Knowledge (internal chat room #senior-adjudicators)",
+          "confidence": 0.95
+        },
+        "token_estimate": 74
+      }
+    ],
+    "session_6288e30c": [
+      {
+        "timestamp": "2026-11-14T16:32:37.190904+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "6288e30c-ec08-44dc-8201-bb88ebc1a219",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.193107+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Asphalt Shingle Roof",
+          "damage_type": "granule_loss",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 25,
+          "visual_evidence": "Significant granule loss observed in >20% of surface."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.195460+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+          "reason": "Override: For Asphalt Shingles: If granule loss is visible in >20% of the image, do not approve patch repair. It requires full roof replacement.",
+          "source": "Institutional Knowledge (internal chat room #home-risk)",
+          "confidence": 0.9
+        },
+        "token_estimate": 72
+      }
+    ],
+    "session_72c012a8": [
+      {
+        "timestamp": "2026-11-14T16:32:37.568488+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "72c012a8-8b2c-4706-b1af-684841383cf9",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.570995+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV",
+          "damage_type": "scratch",
+          "location": "battery_casing",
+          "severity": "negligible",
+          "depth_mm": 0.5,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Faint hairline scratch on battery plate."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.573270+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS",
+          "reason": "Override: ALERT: Disregard the 2mm rule for EV battery plates. We had a fire last week. ANY visual scratch on the battery casing is now a MANDATORY TOTAL LOSS.",
+          "source": "Institutional Knowledge (internal chat room #senior-adjudicators)",
+          "confidence": 0.95
+        },
+        "token_estimate": 74
+      }
+    ],
+    "session_c712c6b1": [
+      {
+        "timestamp": "2026-11-14T16:32:37.575518+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "c712c6b1-aca2-45b9-92e6-2e53aa4909b8",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.576965+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Battery",
+          "damage_type": "puncture",
+          "location": "battery_casing",
+          "severity": "critical",
+          "depth_mm": 25.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Jagged hole with visible coolant leakage."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.579123+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS + HAZMAT FEE",
+          "reason": "Override: CRITICAL: Any puncturing of the high-voltage battery casing requires immediate HAZMAT containment. Total Loss + Environmental Cleanup Fee.",
+          "source": "Institutional Knowledge (Safety Alert #ev-hazards)",
+          "confidence": 0.99
+        },
+        "token_estimate": 71
+      }
+    ],
+    "session_7a6ca972": [
+      {
+        "timestamp": "2026-11-14T16:32:37.582406+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "7a6ca972-0324-43a9-a279-15d417d71022",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.584101+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Rear Bumper",
+          "damage_type": "crack",
+          "location": "rear_bumper_plastic",
+          "severity": "minor",
+          "depth_mm": 1.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Vertical stress crack in plastic fascia."
+        },
+        "token_estimate": 57
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.586312+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+          "reason": "Override: Bumper Cracks: Stop approving full replacements for single stress cracks < 3 inches! We have a new plastic welding vendor. APPROVE REPAIR only.",
+          "source": "Institutional Knowledge (internal chat room #auto-repair-ops)",
+          "confidence": 0.85
+        },
+        "token_estimate": 76
+      }
+    ],
+    "session_df007e22": [
+      {
+        "timestamp": "2026-11-14T16:32:37.590348+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "df007e22-bc72-4ff2-b8ec-3b26e582a3db",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.592799+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Door",
+          "damage_type": "dent",
+          "location": "side_door_panel",
+          "severity": "minor",
+          "depth_mm": 3.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Small circular depression. Paint intact."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.595060+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_PDR_SERVICE",
+          "reason": "Override: Door Dings/Hail: All dent-only claims under 50mm MUST be routed to 'Mobile PDR' (Paintless Dent Repair). Do not send to Body Shop.",
+          "source": "Institutional Knowledge (Email: Vendor Management)",
+          "confidence": 0.92
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_a51dce3f": [
+      {
+        "timestamp": "2026-11-14T16:32:37.597568+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "a51dce3f-8ed0-45ed-a205-f02044a1f4d5",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.599451+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "HV Connector",
+          "damage_type": "corrosion",
+          "location": "hv_cable_junction",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Green/White oxidation on orange cable leads."
+        },
+        "token_estimate": 58
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.601754+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+          "reason": "Override: HV Safety: Visible corrosion on orange HV connectors = MANDATORY HARNESS REPLACEMENT. Do not attempt to clean. Fire risk.",
+          "source": "Institutional Knowledge (Safety Bulletin #HV-004)",
+          "confidence": 0.98
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_315d7e4f": [
+      {
+        "timestamp": "2026-11-14T16:32:37.606478+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "315d7e4f-72a0-41b0-b74d-8292dd775a82",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.608233+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Asphalt Shingle Roof",
+          "damage_type": "granule_loss",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 25,
+          "visual_evidence": "Significant granule loss observed in >20% of surface."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.610644+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+          "reason": "Override: For Asphalt Shingles: If granule loss is visible in >20% of the image, do not approve patch repair. It requires full roof replacement.",
+          "source": "Institutional Knowledge (internal chat room #home-risk)",
+          "confidence": 0.9
+        },
+        "token_estimate": 72
+      }
+    ],
+    "session_d61b7342": [
+      {
+        "timestamp": "2026-11-14T16:32:37.613532+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "d61b7342-7335-4e21-b58c-acc4976cab37",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.615915+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Shingle Roof",
+          "damage_type": "missing_material",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 5,
+          "visual_evidence": "3-4 shingles completely detached exposing underlayment."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.618556+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_TAB_SEAL_ONLY",
+          "reason": "Override: Missing Shingles: If wind damage is < 5% of surface, approve 'Tab Sealing & Replace' only. Do not buy the whole slope.",
+          "source": "Institutional Knowledge (internal chat room #catastrophe-response)",
+          "confidence": 0.88
+        },
+        "token_estimate": 69
+      }
+    ],
+    "session_cee81f90": [
+      {
+        "timestamp": "2026-11-14T16:32:37.621511+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "cee81f90-8e70-4300-90e9-38b4cf340ffc",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.629000+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Chimney Flashing",
+          "damage_type": "rust",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 10,
+          "visual_evidence": "Heavy oxidation on metal flashing base."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:32:37.632143+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_RESEAL_AND_PAINT",
+          "reason": "Override: Water Prevention: If rust is on step-flashing, approve 'Reseal & Paint' to prevent future leaks, even if technically wear & tear.",
+          "source": "Institutional Knowledge (internal chat room #home-prevention)",
+          "confidence": 0.75
+        },
+        "token_estimate": 71
+      }
+    ],
+    "session_c4ba3f4a": [
+      {
+        "timestamp": "2026-11-14T16:32:56.443392+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "c4ba3f4a-769f-4395-a5cb-396a46859b16",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.447322+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV",
+          "damage_type": "scratch",
+          "location": "battery_casing",
+          "severity": "negligible",
+          "depth_mm": 0.5,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Faint hairline scratch on battery plate."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.450358+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS",
+          "reason": "Override: ALERT: Disregard the 2mm rule for EV battery plates. We had a fire last week. ANY visual scratch on the battery casing is now a MANDATORY TOTAL LOSS.",
+          "source": "Institutional Knowledge (internal chat room #senior-adjudicators)",
+          "confidence": 0.95
+        },
+        "token_estimate": 74
+      }
+    ],
+    "session_0b96cda9": [
+      {
+        "timestamp": "2026-11-14T16:32:56.453575+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "0b96cda9-607f-48fe-8c5c-d36c83c596e7",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.457142+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Battery",
+          "damage_type": "puncture",
+          "location": "battery_casing",
+          "severity": "critical",
+          "depth_mm": 25.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Jagged hole with visible coolant leakage."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.462141+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS + HAZMAT FEE",
+          "reason": "Override: CRITICAL: Any puncturing of the high-voltage battery casing requires immediate HAZMAT containment. Total Loss + Environmental Cleanup Fee.",
+          "source": "Institutional Knowledge (Safety Alert #ev-hazards)",
+          "confidence": 0.99
+        },
+        "token_estimate": 71
+      }
+    ],
+    "session_692c0f44": [
+      {
+        "timestamp": "2026-11-14T16:32:56.468471+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "692c0f44-26ea-4234-a820-3601a518843a",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.470438+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Rear Bumper",
+          "damage_type": "crack",
+          "location": "rear_bumper_plastic",
+          "severity": "minor",
+          "depth_mm": 1.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Vertical stress crack in plastic fascia."
+        },
+        "token_estimate": 57
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.472907+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+          "reason": "Override: Bumper Cracks: Stop approving full replacements for single stress cracks < 3 inches! We have a new plastic welding vendor. APPROVE REPAIR only.",
+          "source": "Institutional Knowledge (internal chat room #auto-repair-ops)",
+          "confidence": 0.85
+        },
+        "token_estimate": 76
+      }
+    ],
+    "session_a9367630": [
+      {
+        "timestamp": "2026-11-14T16:32:56.475699+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "a9367630-0e14-4689-87a4-0f5cbc642960",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.477586+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Door",
+          "damage_type": "dent",
+          "location": "side_door_panel",
+          "severity": "minor",
+          "depth_mm": 3.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Small circular depression. Paint intact."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.479822+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_PDR_SERVICE",
+          "reason": "Override: Door Dings/Hail: All dent-only claims under 50mm MUST be routed to 'Mobile PDR' (Paintless Dent Repair). Do not send to Body Shop.",
+          "source": "Institutional Knowledge (Email: Vendor Management)",
+          "confidence": 0.92
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_5bb70275": [
+      {
+        "timestamp": "2026-11-14T16:32:56.482871+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "5bb70275-b2b6-49c2-8d1b-01579dd64aa6",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.486880+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "HV Connector",
+          "damage_type": "corrosion",
+          "location": "hv_cable_junction",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Green/White oxidation on orange cable leads."
+        },
+        "token_estimate": 58
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.489792+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+          "reason": "Override: HV Safety: Visible corrosion on orange HV connectors = MANDATORY HARNESS REPLACEMENT. Do not attempt to clean. Fire risk.",
+          "source": "Institutional Knowledge (Safety Bulletin #HV-004)",
+          "confidence": 0.98
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_7989455d": [
+      {
+        "timestamp": "2026-11-14T16:32:56.497270+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "7989455d-66ad-468e-a8af-32b0774614f3",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.504171+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Asphalt Shingle Roof",
+          "damage_type": "granule_loss",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 25,
+          "visual_evidence": "Significant granule loss observed in >20% of surface."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.509133+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+          "reason": "Override: For Asphalt Shingles: If granule loss is visible in >20% of the image, do not approve patch repair. It requires full roof replacement.",
+          "source": "Institutional Knowledge (internal chat room #home-risk)",
+          "confidence": 0.9
+        },
+        "token_estimate": 72
+      }
+    ],
+    "session_b14ee765": [
+      {
+        "timestamp": "2026-11-14T16:32:56.512160+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "b14ee765-d47f-4d33-aa02-52a9fb7ac924",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.518875+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Shingle Roof",
+          "damage_type": "missing_material",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 5,
+          "visual_evidence": "3-4 shingles completely detached exposing underlayment."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.521604+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_TAB_SEAL_ONLY",
+          "reason": "Override: Missing Shingles: If wind damage is < 5% of surface, approve 'Tab Sealing & Replace' only. Do not buy the whole slope.",
+          "source": "Institutional Knowledge (internal chat room #catastrophe-response)",
+          "confidence": 0.88
+        },
+        "token_estimate": 69
+      }
+    ],
+    "session_0f82093f": [
+      {
+        "timestamp": "2026-11-14T16:32:56.524965+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "0f82093f-a6e3-4ae3-96a0-dfd2f4525397",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.527342+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Chimney Flashing",
+          "damage_type": "rust",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 10,
+          "visual_evidence": "Heavy oxidation on metal flashing base."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:32:56.529416+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_RESEAL_AND_PAINT",
+          "reason": "Override: Water Prevention: If rust is on step-flashing, approve 'Reseal & Paint' to prevent future leaks, even if technically wear & tear.",
+          "source": "Institutional Knowledge (internal chat room #home-prevention)",
+          "confidence": 0.75
+        },
+        "token_estimate": 71
+      }
+    ],
+    "session_304a24f9": [
+      {
+        "timestamp": "2026-11-14T16:34:54.174250+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "304a24f9-8c8a-422a-9a78-536b38afd212",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.176693+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV",
+          "damage_type": "scratch",
+          "location": "battery_casing",
+          "severity": "negligible",
+          "depth_mm": 0.5,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Faint hairline scratch on battery plate."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.179411+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS",
+          "reason": "Override: ALERT: Disregard the 2mm rule for EV battery plates. We had a fire last week. ANY visual scratch on the battery casing is now a MANDATORY TOTAL LOSS.",
+          "source": "Institutional Knowledge (internal chat room #senior-adjudicators)",
+          "confidence": 0.95
+        },
+        "token_estimate": 74
+      }
+    ],
+    "session_cfbed59e": [
+      {
+        "timestamp": "2026-11-14T16:34:54.535860+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "cfbed59e-cc10-455a-81a7-b8a90b2744bb",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.538281+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Asphalt Shingle Roof",
+          "damage_type": "granule_loss",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 25,
+          "visual_evidence": "Significant granule loss observed in >20% of surface."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.541160+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+          "reason": "Override: For Asphalt Shingles: If granule loss is visible in >20% of the image, do not approve patch repair. It requires full roof replacement.",
+          "source": "Institutional Knowledge (internal chat room #home-risk)",
+          "confidence": 0.9
+        },
+        "token_estimate": 72
+      }
+    ],
+    "session_bb405c45": [
+      {
+        "timestamp": "2026-11-14T16:34:54.899423+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "bb405c45-a03d-4400-b7c2-eaba84858814",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.901422+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV",
+          "damage_type": "scratch",
+          "location": "battery_casing",
+          "severity": "negligible",
+          "depth_mm": 0.5,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Faint hairline scratch on battery plate."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.906492+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS",
+          "reason": "Override: ALERT: Disregard the 2mm rule for EV battery plates. We had a fire last week. ANY visual scratch on the battery casing is now a MANDATORY TOTAL LOSS.",
+          "source": "Institutional Knowledge (internal chat room #senior-adjudicators)",
+          "confidence": 0.95
+        },
+        "token_estimate": 74
+      }
+    ],
+    "session_6d74ca5d": [
+      {
+        "timestamp": "2026-11-14T16:34:54.910328+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "6d74ca5d-75e1-4b1c-a53b-4bd0c2c9b177",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.912376+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Battery",
+          "damage_type": "puncture",
+          "location": "battery_casing",
+          "severity": "critical",
+          "depth_mm": 25.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Jagged hole with visible coolant leakage."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.915337+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS + HAZMAT FEE",
+          "reason": "Override: CRITICAL: Any puncturing of the high-voltage battery casing requires immediate HAZMAT containment. Total Loss + Environmental Cleanup Fee.",
+          "source": "Institutional Knowledge (Safety Alert #ev-hazards)",
+          "confidence": 0.99
+        },
+        "token_estimate": 71
+      }
+    ],
+    "session_20474995": [
+      {
+        "timestamp": "2026-11-14T16:34:54.920416+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "20474995-cd0c-41ea-b0fb-03ec2fff7f31",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.922830+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Rear Bumper",
+          "damage_type": "crack",
+          "location": "rear_bumper_plastic",
+          "severity": "minor",
+          "depth_mm": 1.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Vertical stress crack in plastic fascia."
+        },
+        "token_estimate": 57
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.930738+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+          "reason": "Override: Bumper Cracks: Stop approving full replacements for single stress cracks < 3 inches! We have a new plastic welding vendor. APPROVE REPAIR only.",
+          "source": "Institutional Knowledge (internal chat room #auto-repair-ops)",
+          "confidence": 0.85
+        },
+        "token_estimate": 76
+      }
+    ],
+    "session_6f5b02ff": [
+      {
+        "timestamp": "2026-11-14T16:34:54.934592+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "6f5b02ff-68bd-4268-8ee4-e88c808143c2",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.936806+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Door",
+          "damage_type": "dent",
+          "location": "side_door_panel",
+          "severity": "minor",
+          "depth_mm": 3.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Small circular depression. Paint intact."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.939610+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_PDR_SERVICE",
+          "reason": "Override: Door Dings/Hail: All dent-only claims under 50mm MUST be routed to 'Mobile PDR' (Paintless Dent Repair). Do not send to Body Shop.",
+          "source": "Institutional Knowledge (Email: Vendor Management)",
+          "confidence": 0.92
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_9674de81": [
+      {
+        "timestamp": "2026-11-14T16:34:54.943506+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "9674de81-d884-4574-942c-6cd31aeb51cd",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.945813+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "HV Connector",
+          "damage_type": "corrosion",
+          "location": "hv_cable_junction",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Green/White oxidation on orange cable leads."
+        },
+        "token_estimate": 58
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.949087+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+          "reason": "Override: HV Safety: Visible corrosion on orange HV connectors = MANDATORY HARNESS REPLACEMENT. Do not attempt to clean. Fire risk.",
+          "source": "Institutional Knowledge (Safety Bulletin #HV-004)",
+          "confidence": 0.98
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_303f0d39": [
+      {
+        "timestamp": "2026-11-14T16:34:54.956346+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "303f0d39-afe0-4a61-8858-a064bbf83330",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.960312+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Asphalt Shingle Roof",
+          "damage_type": "granule_loss",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 25,
+          "visual_evidence": "Significant granule loss observed in >20% of surface."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.964050+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+          "reason": "Override: For Asphalt Shingles: If granule loss is visible in >20% of the image, do not approve patch repair. It requires full roof replacement.",
+          "source": "Institutional Knowledge (internal chat room #home-risk)",
+          "confidence": 0.9
+        },
+        "token_estimate": 72
+      }
+    ],
+    "session_0d634e73": [
+      {
+        "timestamp": "2026-11-14T16:34:54.968981+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "0d634e73-bc69-42e2-889e-42556174da27",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.971863+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Shingle Roof",
+          "damage_type": "missing_material",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 5,
+          "visual_evidence": "3-4 shingles completely detached exposing underlayment."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.975173+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_TAB_SEAL_ONLY",
+          "reason": "Override: Missing Shingles: If wind damage is < 5% of surface, approve 'Tab Sealing & Replace' only. Do not buy the whole slope.",
+          "source": "Institutional Knowledge (internal chat room #catastrophe-response)",
+          "confidence": 0.88
+        },
+        "token_estimate": 69
+      }
+    ],
+    "session_bab82de9": [
+      {
+        "timestamp": "2026-11-14T16:34:54.979612+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "bab82de9-38dc-48ef-ad89-9e511b0309d3",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.983225+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Chimney Flashing",
+          "damage_type": "rust",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 10,
+          "visual_evidence": "Heavy oxidation on metal flashing base."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:34:54.988262+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_RESEAL_AND_PAINT",
+          "reason": "Override: Water Prevention: If rust is on step-flashing, approve 'Reseal & Paint' to prevent future leaks, even if technically wear & tear.",
+          "source": "Institutional Knowledge (internal chat room #home-prevention)",
+          "confidence": 0.75
+        },
+        "token_estimate": 71
+      }
+    ],
+    "session_f007a80d": [
+      {
+        "timestamp": "2026-11-14T16:35:00.419183+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "f007a80d-ba91-4ae9-9834-700baf1ea27d",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.424032+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV",
+          "damage_type": "scratch",
+          "location": "battery_casing",
+          "severity": "negligible",
+          "depth_mm": 0.5,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Faint hairline scratch on battery plate."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.427384+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS",
+          "reason": "Override: ALERT: Disregard the 2mm rule for EV battery plates. We had a fire last week. ANY visual scratch on the battery casing is now a MANDATORY TOTAL LOSS.",
+          "source": "Institutional Knowledge (internal chat room #senior-adjudicators)",
+          "confidence": 0.95
+        },
+        "token_estimate": 74
+      }
+    ],
+    "session_167c5f7a": [
+      {
+        "timestamp": "2026-11-14T16:35:00.431404+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "167c5f7a-dcee-494c-b60f-cc62acc8a636",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.434077+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Battery",
+          "damage_type": "puncture",
+          "location": "battery_casing",
+          "severity": "critical",
+          "depth_mm": 25.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Jagged hole with visible coolant leakage."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.437630+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "TOTAL_LOSS + HAZMAT FEE",
+          "reason": "Override: CRITICAL: Any puncturing of the high-voltage battery casing requires immediate HAZMAT containment. Total Loss + Environmental Cleanup Fee.",
+          "source": "Institutional Knowledge (Safety Alert #ev-hazards)",
+          "confidence": 0.99
+        },
+        "token_estimate": 71
+      }
+    ],
+    "session_62436a30": [
+      {
+        "timestamp": "2026-11-14T16:35:00.442019+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "62436a30-dccc-460d-af13-c5fb97e489d1",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.444617+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Rear Bumper",
+          "damage_type": "crack",
+          "location": "rear_bumper_plastic",
+          "severity": "minor",
+          "depth_mm": 1.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Vertical stress crack in plastic fascia."
+        },
+        "token_estimate": 57
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.447594+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+          "reason": "Override: Bumper Cracks: Stop approving full replacements for single stress cracks < 3 inches! We have a new plastic welding vendor. APPROVE REPAIR only.",
+          "source": "Institutional Knowledge (internal chat room #auto-repair-ops)",
+          "confidence": 0.85
+        },
+        "token_estimate": 76
+      }
+    ],
+    "session_1b1ecf8f": [
+      {
+        "timestamp": "2026-11-14T16:35:00.452802+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "1b1ecf8f-bcad-43e4-b3c8-785d7e4ecde9",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.456321+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "EV Door",
+          "damage_type": "dent",
+          "location": "side_door_panel",
+          "severity": "minor",
+          "depth_mm": 3.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Small circular depression. Paint intact."
+        },
+        "token_estimate": 54
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.459412+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_PDR_SERVICE",
+          "reason": "Override: Door Dings/Hail: All dent-only claims under 50mm MUST be routed to 'Mobile PDR' (Paintless Dent Repair). Do not send to Body Shop.",
+          "source": "Institutional Knowledge (Email: Vendor Management)",
+          "confidence": 0.92
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_7d53d0a5": [
+      {
+        "timestamp": "2026-11-14T16:35:00.464600+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "7d53d0a5-190a-4a7e-a957-945ceea6bae1",
+          "claim_type": "auto"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.467622+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "HV Connector",
+          "damage_type": "corrosion",
+          "location": "hv_cable_junction",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 0,
+          "visual_evidence": "Green/White oxidation on orange cable leads."
+        },
+        "token_estimate": 58
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.470688+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "MANDATORY_HARNESS_REPLACEMENT",
+          "reason": "Override: HV Safety: Visible corrosion on orange HV connectors = MANDATORY HARNESS REPLACEMENT. Do not attempt to clean. Fire risk.",
+          "source": "Institutional Knowledge (Safety Bulletin #HV-004)",
+          "confidence": 0.98
+        },
+        "token_estimate": 68
+      }
+    ],
+    "session_74e353de": [
+      {
+        "timestamp": "2026-11-14T16:35:00.474763+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "74e353de-e789-4af9-ba6c-f3d7d1e9867d",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.477273+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Asphalt Shingle Roof",
+          "damage_type": "granule_loss",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 25,
+          "visual_evidence": "Significant granule loss observed in >20% of surface."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.480139+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+          "reason": "Override: For Asphalt Shingles: If granule loss is visible in >20% of the image, do not approve patch repair. It requires full roof replacement.",
+          "source": "Institutional Knowledge (internal chat room #home-risk)",
+          "confidence": 0.9
+        },
+        "token_estimate": 72
+      }
+    ],
+    "session_e3f53781": [
+      {
+        "timestamp": "2026-11-14T16:35:00.488859+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "e3f53781-35d1-45f4-8398-374ce34072d8",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.491851+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Shingle Roof",
+          "damage_type": "missing_material",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 5,
+          "visual_evidence": "3-4 shingles completely detached exposing underlayment."
+        },
+        "token_estimate": 62
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.495009+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_TAB_SEAL_ONLY",
+          "reason": "Override: Missing Shingles: If wind damage is < 5% of surface, approve 'Tab Sealing & Replace' only. Do not buy the whole slope.",
+          "source": "Institutional Knowledge (internal chat room #catastrophe-response)",
+          "confidence": 0.88
+        },
+        "token_estimate": 69
+      }
+    ],
+    "session_017aaac6": [
+      {
+        "timestamp": "2026-11-14T16:35:00.499030+00:00",
+        "role": "system",
+        "content": {
+          "stage": "intake",
+          "claim_id": "017aaac6-df04-4594-9f1a-a50f68f7dbe5",
+          "claim_type": "home"
+        },
+        "token_estimate": 23
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.501370+00:00",
+        "role": "visual_agent",
+        "content": {
+          "object_detected": "Chimney Flashing",
+          "damage_type": "rust",
+          "location": "roof_surface",
+          "severity": "moderate",
+          "depth_mm": 0.0,
+          "affected_area_percentage": 10,
+          "visual_evidence": "Heavy oxidation on metal flashing base."
+        },
+        "token_estimate": 56
+      },
+      {
+        "timestamp": "2026-11-14T16:35:00.504260+00:00",
+        "role": "adjudicator_agent",
+        "content": {
+          "outcome": "APPROVE_RESEAL_AND_PAINT",
+          "reason": "Override: Water Prevention: If rust is on step-flashing, approve 'Reseal & Paint' to prevent future leaks, even if technically wear & tear.",
+          "source": "Institutional Knowledge (internal chat room #home-prevention)",
+          "confidence": 0.75
+        },
+        "token_estimate": 71
+      }
+    ]
   }
 }

@@ -7,8 +7,8 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
-  verify-and-test:
-    name: Verify 5-Pillar Architecture & Run Tests
+  verify-and-evaluate:
+    name: Verify 5-Pillar Architecture, Unit Tests & Golden Eval Suite
     runs-on: ubuntu-latest
 
     steps:
@@ -28,14 +28,21 @@ jobs:
 
       - name: Syntax & Module Compilation Check
         run: |
-          python -m py_compile app.py agents/*.py flows/*.py infrastructure/*.py ui/*.py
+          python -m py_compile app.py agents/*.py flows/*.py infrastructure/*.py ui/*.py evals/*.py
 
-      - name: Run 5-Pillar Automated Test Suite
+      - name: Run 5-Pillar Automated Unit & Integration Tests
         env:
           ADK_OFFLINE_MODE: "1"
           ENV: "LOCAL"
         run: |
           python -m unittest discover -s tests -v
+
+      - name: Run Generative Evaluation Suite against Golden Dataset
+        env:
+          ADK_OFFLINE_MODE: "1"
+          ENV: "LOCAL"
+        run: |
+          python evals/run_eval.py
 
       - name: Validate Container Build
         run: |

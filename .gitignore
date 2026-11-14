@@ -8,9 +8,16 @@ venv/
 .venv/
 env/
 
-# Runtime & temporary uploads
+# Runtime & temporary uploads / SQLite local session DB
 temp_uploads/
+data/sessions_memory.db*
 *.log
+
+# Terraform local state
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
 
 # OS & IDE metadata
 .DS_Store

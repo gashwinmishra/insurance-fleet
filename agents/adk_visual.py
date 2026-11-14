@@ -1,5 +1,5 @@
-import os
 import json
+import os
 import uuid
 from types import SimpleNamespace
 import google.auth
@@ -8,7 +8,8 @@ from google.adk.models import Gemini
 from google.adk.sessions import InMemorySessionService
 from vertexai.generative_models import Part
 from google.genai import Client
-from agents.tools import validate_visual_findings
+from google.genai import types
+from agents.tools import VisualFindingsSchema, validate_visual_findings
 
 
 class AdkVisualAgent:
@@ -53,7 +54,7 @@ class AdkVisualAgent:
         self.agent = Agent(
             name="visual_agent",
             model=self.model_config,
-            instruction="You are an expert insurance adjuster AI. Return ONLY JSON.",
+            instruction="You are an expert insurance adjuster AI. Return ONLY JSON matching VisualFindingsSchema.",
         )
 
         self.session_service = InMemorySessionService()
@@ -66,7 +67,7 @@ class AdkVisualAgent:
     def analyze(self, image_input, context="auto"):
         """
         Public API: Analyze image (Scenario Lookup or Live ADK Vision Inference).
-        Guarantees a normalized VisualFindings schema contract.
+        Guarantees a normalized VisualFindingsSchema contract.
         """
         print(f"[AdkVisualAgent] Scanning image for context: {context}...")
 
@@ -92,7 +93,7 @@ class AdkVisualAgent:
 
             prompt = f"""
             Analyze this image for a {context} insurance claim.
-            Return ONLY a valid JSON object with:
+            Return ONLY a valid JSON object matching VisualFindingsSchema with:
             - object_detected, damage_type, location, severity, depth_mm, affected_area_percentage, visual_evidence.
             Do not include markdown backticks.
             """
@@ -126,11 +127,16 @@ class AdkVisualAgent:
                 print(f"[AdkVisualAgent] Runner Loop Error: {e}")
 
             if (not response_text or not response_text.strip()) and self.output_client is not None:
-                print("[AdkVisualAgent] Runner yielded no text. Using Direct Client Fallback.")
+                print("[AdkVisualAgent] Runner yielded no text. Using Direct Client with VisualFindingsSchema.")
                 try:
                     direct_response = self.output_client.models.generate_content(
                         model="gemini-2.0-flash-001",
                         contents=[prompt, image_part],
+                        config=types.GenerateContentConfig(
+                            response_mime_type="application/json",
+                            response_schema=VisualFindingsSchema,
+                            temperature=0.1,
+                        ),
                     )
                     if direct_response.text:
                         response_text = direct_response.text
@@ -151,4 +157,3 @@ class AdkVisualAgent:
                 "visual_evidence": f"System Error: {str(e)}",
                 "severity": "unknown",
             }
-

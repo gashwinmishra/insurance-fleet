@@ -392,12 +392,17 @@ def render_agentic_fleet():
                     st.info("No sufficient patterns detected for policy evolution yet.")
 
             with tab4:
-                st.caption("Distributed execution trace, tool call telemetry, and BigQuery audit logs.")
+                st.caption("Distributed execution trace, Strategic Model Routing, PII redaction, and BigQuery audit logs.")
                 if observability:
-                    m1, m2, m3 = st.columns(3)
+                    routing_info = result.get("model_routing", {})
+                    m1, m2, m3, m4 = st.columns(4)
                     m1.metric("Trace ID", observability.get("trace_id", "N/A")[:14])
                     m2.metric("Total Latency", f"{observability.get('total_duration_ms', 0.0):.1f} ms")
-                    m3.metric("Tool Invocations", observability.get("tool_call_count", 0))
+                    m3.metric("Routed Model", routing_info.get("selected_model", "gemini-1.5-pro-002"))
+                    m4.metric("PII Redactions", observability.get("pii_redactions_applied", 0))
+
+                    if routing_info.get("reason"):
+                        st.info(f"**🧭 Strategic Model Router (`{routing_info.get('tier')}`):** {routing_info.get('reason')}")
 
                     st.markdown("##### ⏱️ Multi-Agent Span Waterfall")
                     for span_item in observability.get("spans", []):
@@ -409,7 +414,7 @@ def render_agentic_fleet():
                             st.caption(
                                 f"  ↳ 🛠️ Tool `{tc['tool_name']}` ({tc['duration_ms']} ms) — Args: `{json.dumps(tc['arguments'])}`"
                             )
-                with st.expander("📦 Raw BigQuery Audit Logs (Recent)", expanded=False):
+                with st.expander("📦 Raw BigQuery Audit Logs (PII-Sanitized)", expanded=False):
                     st.json(BQLogger.get_recent_logs(limit=5))
 
             # --- HUMAN-IN-THE-LOOP (HITL) FEEDBACK INTERFACE ---

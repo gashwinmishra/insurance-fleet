@@ -1,0 +1,146 @@
+[
+  {
+    "eval_id": "eval_auto_001",
+    "description": "EV Battery Casing Shallow Scratch (<2mm) - Safety Override to Total Loss",
+    "claim_type": "auto",
+    "image_input": "assets/car_scratch_shallow.png",
+    "expected_routed_model": "gemini-1.5-pro-002",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "APPROVE_REPAIR",
+    "expected_layer_2_outcome": "TOTAL_LOSS",
+    "expected_rag_rule_id": "MSG-8921",
+    "expected_policy_diff_keywords": ["battery_damage", "ZERO TOLERANCE"],
+    "expected_escalation_signoff": true
+  },
+  {
+    "eval_id": "eval_auto_002",
+    "description": "EV Battery Puncture with Coolant Leak - Hazmat Protocol",
+    "claim_type": "auto",
+    "image_input": "assets/ev_battery_puncture_leak.png",
+    "expected_routed_model": "gemini-1.5-pro-002",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "TOTAL_LOSS",
+    "expected_layer_2_outcome": "TOTAL_LOSS + HAZMAT FEE",
+    "expected_rag_rule_id": "MSG-9912",
+    "expected_policy_diff_keywords": ["HAZMAT"],
+    "expected_escalation_signoff": true
+  },
+  {
+    "eval_id": "eval_auto_003",
+    "description": "Plastic Rear Bumper Minor Stress Crack - Cost Optimization Plastic Weld",
+    "claim_type": "auto",
+    "image_input": "assets/ev_bumper_minor_crack.png",
+    "expected_routed_model": "gemini-2.0-flash-001",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "REPLACE_PART",
+    "expected_layer_2_outcome": "APPROVE_REPAIR (PLASTIC WELD)",
+    "expected_rag_rule_id": "MSG-7782",
+    "expected_policy_diff_keywords": ["bumper_crack", "PLASTIC_WELD"],
+    "expected_escalation_signoff": false
+  },
+  {
+    "eval_id": "eval_auto_004",
+    "description": "Side Door Parking Ding (<50mm) - Mobile PDR Vendor Routing",
+    "claim_type": "auto",
+    "image_input": "assets/ev_door_ding_parking.png",
+    "expected_routed_model": "gemini-2.0-flash-001",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "APPROVE_BODY_SHOP_REPAIR",
+    "expected_layer_2_outcome": "APPROVE_PDR_SERVICE",
+    "expected_rag_rule_id": "MSG-3391",
+    "expected_policy_diff_keywords": ["MOBILE_PDR_SERVICE"],
+    "expected_escalation_signoff": false
+  },
+  {
+    "eval_id": "eval_auto_005",
+    "description": "High-Voltage Connector Corrosion - Mandatory Harness Replacement",
+    "claim_type": "auto",
+    "image_input": "assets/ev_battery_corrosion_connector.png",
+    "expected_routed_model": "gemini-1.5-pro-002",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "CLEAN_AND_INSPECT",
+    "expected_layer_2_outcome": "MANDATORY_HARNESS_REPLACEMENT",
+    "expected_rag_rule_id": "MSG-9988",
+    "expected_policy_diff_keywords": ["MANDATORY_HARNESS_REPLACEMENT"],
+    "expected_escalation_signoff": false
+  },
+  {
+    "eval_id": "eval_home_001",
+    "description": "Asphalt Roof Granule Loss (25%) - Full Replacement Override",
+    "claim_type": "home",
+    "image_input": "assets/roof_damage.png",
+    "expected_routed_model": "gemini-1.5-pro-002",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "REVIEW_REQUIRED",
+    "expected_layer_2_outcome": "REFUSE_REPAIR_FULL_REPLACEMENT",
+    "expected_rag_rule_id": "MSG-4421",
+    "expected_policy_diff_keywords": ["roof_damage", "15%"],
+    "expected_escalation_signoff": false
+  },
+  {
+    "eval_id": "eval_home_002",
+    "description": "Windstorm Missing Shingles (5%) - Catastrophe Tab Seal Override",
+    "claim_type": "home",
+    "image_input": "assets/roof_missing_shingles_wind.png",
+    "expected_routed_model": "gemini-1.5-pro-002",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "APPROVE_REPLACEMENT_SLOPE",
+    "expected_layer_2_outcome": "APPROVE_TAB_SEAL_ONLY",
+    "expected_rag_rule_id": "MSG-5511",
+    "expected_policy_diff_keywords": ["TAB_SEAL_REPAIR"],
+    "expected_escalation_signoff": false
+  },
+  {
+    "eval_id": "eval_home_003",
+    "description": "Chimney Step-Flashing Oxidation - Proactive Leak Prevention Override",
+    "claim_type": "home",
+    "image_input": "assets/roof_flashing_rusted_chimney.png",
+    "expected_routed_model": "gemini-1.5-pro-002",
+    "expected_tools": [
+      "lookup_official_policy",
+      "retrieve_institutional_knowledge",
+      "query_override_telemetry",
+      "propose_policy_amendment"
+    ],
+    "expected_layer_1_outcome": "DENY_WEAR_AND_TEAR",
+    "expected_layer_2_outcome": "APPROVE_RESEAL_AND_PAINT",
+    "expected_rag_rule_id": "MSG-2231",
+    "expected_policy_diff_keywords": ["chimney_flashing", "Reseal & Paint"],
+    "expected_escalation_signoff": false
+  }
+]
